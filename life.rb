@@ -1,4 +1,8 @@
-class LiveCell
+class Cell
+  def alive?
+    kind_of?(LiveCell)
+  end
+
   def neighbors
     @neighbors ||= []
   end
@@ -12,9 +16,9 @@ class LiveCell
   end
 
   def living_neighbors
-    neighbors.find_all { |n| n.kind_of?(LiveCell) }
+    neighbors.find_all(&:alive?)
   end
 end
 
-class DeadCell
-end
+class LiveCell < Cell; end
+class DeadCell < Cell; end

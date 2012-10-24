@@ -4,7 +4,15 @@ class LiveCell
   end
 
   def next_generation
-    DeadCell.new
+    if living_neighbors.size > 1
+      LiveCell.new
+    else
+      DeadCell.new
+    end
+  end
+
+  def living_neighbors
+    neighbors.find_all { |n| n.kind_of?(LiveCell) }
   end
 end
 

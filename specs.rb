@@ -1,6 +1,6 @@
 require './life'
 
-describe 'The next generation of live cell' do
+describe 'The next generation of a live cell' do
   subject { cell.next_generation }
   let(:cell) { LiveCell.new }
 

@@ -36,4 +36,13 @@ describe 'The next generation of live cell' do
 
     it { should be_a(LiveCell) }
   end
+
+  context 'with four living neighbors' do
+    before do
+      4.times { cell.neighbors << DeadCell.new }
+      4.times { cell.neighbors << LiveCell.new }
+    end
+
+    it { should be_a(DeadCell) }
+  end
 end

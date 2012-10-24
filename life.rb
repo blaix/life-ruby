@@ -8,7 +8,7 @@ class Cell
   end
 
   def next_generation
-    if living_neighbors.size > 1
+    if living_neighbors.size.between?(2, 3)
       LiveCell.new
     else
       DeadCell.new

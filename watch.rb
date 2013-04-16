@@ -1,6 +1,2 @@
-def run
-  system("rspec specs.rb")
-end
-
-run
-watch(/.+\.rb/) { run }
+runner = -> { system("rspec specs.rb") }
+runner.call && watch(/.+\.rb/, &runner)

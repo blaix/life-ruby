@@ -6,3 +6,6 @@ def specs(changed_file):
 PATTERNS = (
     (r'.*\.rb', [specs]),
 )
+
+# run specs on load
+specs("")
